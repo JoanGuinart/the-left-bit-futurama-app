@@ -9,6 +9,7 @@ export default defineConfig({
       "@api": fileURLToPath(new URL("./src/api", import.meta.url)),
       "@hooks": fileURLToPath(new URL("./src/hooks", import.meta.url)),
       "@pages": fileURLToPath(new URL("./src/pages", import.meta.url)),
+      "@utils": fileURLToPath(new URL("./src/utils", import.meta.url)),
     },
   },
 });
