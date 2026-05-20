@@ -88,6 +88,8 @@
 }
 
 .sayings {
+  word-break: break-word;
+  overflow-wrap: anywhere;
   li {
     font-size: 14px;
     margin-bottom: 4px;
