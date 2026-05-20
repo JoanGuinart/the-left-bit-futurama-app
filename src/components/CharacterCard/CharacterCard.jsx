@@ -21,7 +21,7 @@ function CharacterCard({
         </p>
         <p className={styles.occupation}>{occupation}</p>
       </div>
-      {isFavorite && <span className={styles.heart}>HeartIcon</span>}
+      {isFavorite && <img className={styles.heart} src="/heart-full.png" alt="Favorite" />}
     </div>
   );
 }

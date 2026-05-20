@@ -1,0 +1,98 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  padding: 0;
+  margin-bottom: 1rem;
+
+  &:hover {
+    color: #222;
+  }
+}
+
+.detail {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #6e6e6e;
+  border-radius: 16px;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.heart {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: fit-content;
+  img {
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s ease;
+    &:hover {
+      transform: scale(0.95);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.meta {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+}
+
+.occupation {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.sayingsTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem;
+}
+
+.sayings {
+  li {
+    font-size: 14px;
+    margin-bottom: 4px;
+    line-height: 1.5;
+    list-style: none;
+  }
+}
+
+.message {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+}
