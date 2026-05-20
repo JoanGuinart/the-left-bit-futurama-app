@@ -1,10 +1,10 @@
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import useCharacters from "@hooks/useCharacters";
 import CharacterCard from "@components/CharacterCard/CharacterCard";
-import { isFavorite } from "@utils/favorites";
 import styles from "./CharacterList.module.scss";
 
-function CharacterList() {
+function CharacterList({ isFav }) {
   const { characters, loading, error } = useCharacters();
   const navigate = useNavigate();
 
@@ -25,12 +25,16 @@ function CharacterList() {
           gender={character.gender}
           species={character.species}
           occupation={character.occupation}
-          isFavorite={isFavorite(character.id)}
+          isFavorite={isFav(character.id)}
           onClick={() => navigate(`/character/${character.id}`)}
         />
       ))}
     </div>
   );
 }
+
+CharacterList.propTypes = {
+  isFav: PropTypes.func.isRequired,
+};
 
 export default CharacterList;

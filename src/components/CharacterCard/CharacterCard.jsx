@@ -13,7 +13,14 @@ function CharacterCard({
 }) {
   return (
     <div className={styles.card} onClick={onClick}>
-      <img src={image} alt={name} className={styles.image} />
+      <img
+        src={image}
+        alt={name}
+        className={styles.image}
+        onError={(e) => {
+          e.target.src = "/placeholder.png";
+        }}
+      />
       <div className={styles.info}>
         <p className={styles.name}>{name}</p>
         <p className={styles.meta}>
@@ -21,7 +28,9 @@ function CharacterCard({
         </p>
         <p className={styles.occupation}>{occupation}</p>
       </div>
-      {isFavorite && <img className={styles.heart} src="/heart-full.png" alt="Favorite" />}
+      <div className={styles.heart}>
+        {isFavorite && <img src="/heart-full.png" alt="Favorite" />}
+      </div>
     </div>
   );
 }
@@ -29,7 +38,7 @@ function CharacterCard({
 CharacterCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  age: PropTypes.number.isRequired,
+  age: PropTypes.string.isRequired,
   gender: PropTypes.string.isRequired,
   species: PropTypes.string.isRequired,
   occupation: PropTypes.string.isRequired,

@@ -1,0 +1,38 @@
+@use "../../index.scss" as *;
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+}
+
+@media (min-width: $breakpoint-md) {
+  .sidebar {
+    width: 300px;
+    border-right: 1px solid #eee;
+    overflow-y: auto;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+  }
+
+  .main {
+    overflow-y: auto;
+    height: 100vh;
+  }
+}
+
+.hidden {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+  }
+}

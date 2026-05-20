@@ -1,18 +1,17 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import useCharacter from "@hooks/useCharacter";
-import { isFavorite, toggleFavorite } from "@utils/favorites";
-import { useState } from "react";
 import styles from "./CharacterDetail.module.scss";
 
 function CharacterDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { toggle, isFav } = useOutletContext();
   const { character, loading, error } = useCharacter(id);
-  const [favorite, setFavorite] = useState(isFavorite(Number(id)));
+
+  const favorite = isFav(Number(id));
 
   const handleToggleFavorite = () => {
-    const updated = toggleFavorite(Number(id));
-    setFavorite(updated.includes(Number(id)));
+    toggle(Number(id));
   };
 
   if (loading) return <p className={styles.message}>Loading...</p>;
@@ -23,7 +22,7 @@ function CharacterDetail() {
 
   return (
     <div className={styles.container}>
-      <button className={styles.back} onClick={() => navigate(-1)}>
+      <button className={styles.back} onClick={() => navigate("/")}>
         ← Back
       </button>
       <div className={styles.detail}>

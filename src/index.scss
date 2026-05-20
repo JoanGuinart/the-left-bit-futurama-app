@@ -1,3 +1,5 @@
+$breakpoint-md: 600px;
+
 :root {
   --color-bg: #f9f9f9;
   --color-text: #222;
@@ -21,4 +23,9 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+.select-character{
+   margin-top: 50vh;
+  transform: translateY(-50%);
+  text-align: center;
 }
